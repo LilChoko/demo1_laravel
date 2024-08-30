@@ -25,7 +25,7 @@ Route::get('/user/{id}', function (string $id) {
 Route::get('/user/{name?}', function (?string $name = null) {
     return 'Leito' .$name;
 });
- 
+
 /*
 Route::get('/user/{name?}', function (?string $name = 'John') {
     return $name;
