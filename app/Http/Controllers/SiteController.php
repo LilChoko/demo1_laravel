@@ -13,7 +13,7 @@ class SiteController extends Controller
     }
 
     public function profile($username)
-    {
+    {axz nzmxz z
         //echo $username;
       return view ('profile', ['username' => $username]);
     }
