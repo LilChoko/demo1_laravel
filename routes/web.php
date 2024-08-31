@@ -7,5 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [SiteController::class, 'index']);
 //Ruta hacia Products
 Route::get('/products', [SiteController::class, 'products']);
+//Ruta hacia Cart
+Route::get('/cart', [SiteController::class, 'cart']);
 
 Route::get('/profile/{username}', [SiteController::class, 'profile']);
