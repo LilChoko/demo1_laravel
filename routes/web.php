@@ -2,32 +2,10 @@
 
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
 
+//Ruta hacia el directorio raiz en este caso funcion home
 Route::get('/', [SiteController::class, 'index']);
+//Ruta hacia Products
+Route::get('/products', [SiteController::class, 'products']);
+
 Route::get('/profile/{username}', [SiteController::class, 'profile']);
-
-Route::get('/greeting', function () {
-    return 'Hello World';
-});
-
-/*
-Nos pide un nombre de usuario
-Route::get('/user/{id}', function (string $id) {
-    return 'User '.$id;
-});
-*/
-
-Route::get('/user/{name?}', function (?string $name = null) {
-    return 'Leito' .$name;
-});
-
-/*
-Route::get('/user/{name?}', function (?string $name = 'John') {
-    return $name;
-});
-*/
