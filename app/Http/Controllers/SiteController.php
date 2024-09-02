@@ -23,6 +23,14 @@ class SiteController extends Controller
             return view ('e-commerce.products', compact('products'));
     }
 
+    //Funcion para mostrar /product_details
+    public function product_details($id)
+    {
+            $product = Product::find($id);
+            return view ('e-commerce.product_details', compact('product'));
+    }
+
+
     //Funcion para mostrar /cart
     public function cart()
     {
