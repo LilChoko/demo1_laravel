@@ -23,21 +23,21 @@
                         <div class="row align-items-center">
                             <div class="col-md-5">
                                 <div class="product-slider-single normal-slider">
-                                    <img src="{{ asset('img/product-1.jpg')}}" alt="Product Image">
-                                    <img src="{{ asset('img/product-3.jpg') }}" alt="Product Image">
+                                    <img src="{{ asset('img') }}/{{ $product->image }}" alt="Product Image">
+                                    <!--<img src="{{ asset('img/product-3.jpg') }}" alt="Product Image">
                                     <img src="{{ asset('img/product-5.jpg') }}" alt="Product Image">
                                     <img src="{{ asset('img/product-7.jpg') }}" alt="Product Image">
                                     <img src="{{ asset('img/product-9.jpg') }}" alt="Product Image">
-                                    <img src="{{ asset('img/product-10.jpg') }}" alt="Product Image">
+                                    <img src="{{ asset('img/product-10.jpg') }}" alt="Product Image">-->
                                 </div>
                                 <div class="product-slider-single-nav normal-slider">
                                     <div class="slider-nav-img"><img src="{{ asset('img') }}/{{ $product->image }}" alt="Product Image"></div>
                                 <!--Imagenes definidas de forma estatica -->
-                                    <div class="slider-nav-img"><img src="{{ asset('img/product-3.jpg') }}" alt="Product Image"></div>
+                                   <!-- <div class="slider-nav-img"><img src="{{ asset('img/product-3.jpg') }}" alt="Product Image"></div>
                                     <div class="slider-nav-img"><img src="{{ asset('img/product-5.jpg') }}" alt="Product Image"></div>
                                     <div class="slider-nav-img"><img src="{{ asset('img/product-7.jpg') }}" alt="Product Image"></div>
                                     <div class="slider-nav-img"><img src="{{ asset('img/product-9.jpg') }}" alt="Product Image"></div>
-                                    <div class="slider-nav-img"><img src="{{ asset('img/product-10.jpg') }}" alt="Product Image"></div>
+                                    <div class="slider-nav-img"><img src="{{ asset('img/product-10.jpg') }}" alt="Product Image"></div>-->
 
 
                                 </div>
@@ -45,7 +45,7 @@
                             <div class="col-md-7">
                                 <div class="product-content">
                                     <div class="title">
-                                        <h2>Product Name</h2>
+                                        <h2>{{ $product-> name }}</h2>
                                     </div>
                                     <div class="ratting">
                                         <i class="fa fa-star"></i>
@@ -56,7 +56,7 @@
                                     </div>
                                     <div class="price">
                                         <h4>Price:</h4>
-                                        <p>$99 <span>{{ $product->price }}</span></p>
+                                        <p> <span>{{ $product->price }}</span></p>
                                     </div>
                                     <div class="quantity">
                                         <h4>Quantity:</h4>
@@ -475,12 +475,12 @@
     <div class="brand">
         <div class="container-fluid">
             <div class="brand-slider">
-                <div class="brand-item"><img src="img/brand-1.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-2.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-3.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-4.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-5.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-6.png" alt=""></div>
+            <div class="brand-item"><img src="{{ asset('img/brand-1.png') }}" alt=""></div>
+            <div class="brand-item"><img src="{{ asset('img/brand-2.png') }}" alt=""></div>
+            <div class="brand-item"><img src="{{ asset('img/brand-3.png') }}" alt=""></div>
+            <div class="brand-item"><img src="{{ asset('img/brand-4.png') }}" alt=""></div>
+            <div class="brand-item"><img src="{{ asset('img/brand-5.png') }}" alt=""></div>
+            <div class="brand-item"><img src="{{ asset('img/brand-6.png') }}" alt=""></div>
             </div>
         </div>
     </div>

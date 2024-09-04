@@ -69,7 +69,7 @@
                     <div class="col-md-4">
                         <div class="product-item">
                             <div class="product-title">
-                                <a href="#">Product Name</a>
+                                <a href="#"> {{ $p->name}} </a>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -91,7 +91,7 @@
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span>{{ $p->price}}</h3>
-                                <a class="btn" href="/product_details/{{$p->id}}"><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                <a class="btn" href="/product_details/{{$p->id}}"><i class="fa fa-shopping-cart"></i>View details</a>
                             </div>
                         </div>
                     </div>
@@ -264,12 +264,12 @@
 <div class="brand">
     <div class="container-fluid">
         <div class="brand-slider">
-            <div class="brand-item"><img src="img/brand-1.png" alt=""></div>
-            <div class="brand-item"><img src="img/brand-2.png" alt=""></div>
-            <div class="brand-item"><img src="img/brand-3.png" alt=""></div>
-            <div class="brand-item"><img src="img/brand-4.png" alt=""></div>
-            <div class="brand-item"><img src="img/brand-5.png" alt=""></div>
-            <div class="brand-item"><img src="img/brand-6.png" alt=""></div>
+            <div class="brand-item"><img src="{{ asset('img/brand-1.png') }}" alt=""></div>
+            <div class="brand-item"><img src="{{ asset('img/brand-2.png') }}" alt=""></div>
+            <div class="brand-item"><img src="{{ asset('img/brand-3.png') }}" alt=""></div>
+            <div class="brand-item"><img src="{{ asset('img/brand-4.png') }}" alt=""></div>
+            <div class="brand-item"><img src="{{ asset('img/brand-5.png') }}" alt=""></div>
+            <div class="brand-item"><img src="{{ asset('img/brand-6.png') }}" alt=""></div>
         </div>
     </div>
 </div>
