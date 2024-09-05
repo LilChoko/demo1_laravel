@@ -37,10 +37,4 @@ class SiteController extends Controller
         $carts = Cart::all();
         return view ('e-commerce.cart', compact('carts'));
     }
-
-    public function profile($username)
-    {
-        //echo $username;
-      return view ('profile', ['username' => $username]);
-    }
 }
