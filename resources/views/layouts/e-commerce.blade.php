@@ -53,10 +53,11 @@
 
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto">
-                            <a href="/" class="nav-item nav-link active">Home</a>
-                            <a href="/products" class="nav-item nav-link">Products</a>
-                            <a href="/product_details" class="nav-item nav-link">Product Detail</a>
-                            <a href="/cart" class="nav-item nav-link">Cart</a>
+                            <!--REFERENCIO DE RUTAS POR SU NOMBRE-->
+                            <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
+                            <a href="{{route('products')}}" class="nav-item nav-link">Products</a>
+                            <a href="{{route('product_details', 0)}}" class="nav-item nav-link">Product Detail</a>
+                            <a href="{{route('cart')}}" class="nav-item nav-link">Cart</a>
                             <a href="/checkout" class="nav-item nav-link">Checkout</a>
                             <a href="/myaccount" class="nav-item nav-link">My Account</a>
                             <div class="nav-item dropdown">

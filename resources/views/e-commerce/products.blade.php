@@ -110,7 +110,11 @@
 
                 <!-- Pagination Start -->
                 <div class="col-md-12">
-                    <nav aria-label="Page navigation example">
+
+                    <!--PAGINACION CON BOOTSTRAP -->
+                    {{$products -> links()}}
+
+                    <!--<nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
                             <li class="page-item disabled">
                                 <a class="page-link" href="#" tabindex="-1">Previous</a>
@@ -122,7 +126,7 @@
                                 <a class="page-link" href="#">Next</a>
                             </li>
                         </ul>
-                    </nav>
+                    </nav>-->
                 </div>
                 <!-- Pagination Start -->
             </div>
@@ -132,26 +136,13 @@
                 <div class="sidebar-widget category">
                     <h2 class="title">Category</h2>
                     <nav class="navbar bg-light">
+
                         <ul class="navbar-nav">
+                            @foreach ($categories as $cat)
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa fa-female"></i>Fashion & Beauty</a>
+                                <a class="nav-link" href="{{route ('products', $cat->id)}}"><i class="{{$cat -> icon}}"></i> {{$cat -> name}} </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa fa-child"></i>Kids & Babies
-                                    Clothes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa fa-tshirt"></i>Men & Women
-                                    Clothes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa fa-mobile-alt"></i>Gadgets &
-                                    Accessories</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics &
-                                    Accessories</a>
-                            </li>
+                            @endforeach
                         </ul>
                     </nav>
                 </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
+use App\Models\Category;
 
 class SiteController extends Controller
 {
@@ -15,12 +16,13 @@ class SiteController extends Controller
     }
 
     //Funcion para mostrar /products
-    public function products()
+    public function products($category_id = null)
     {
-            $products = Product::all();
-            //dd($products);
-            //return view ('e-commerce.products', ['products'=>$products]);
-            return view ('e-commerce.products', compact('products'));
+            $products = (is_null($category_id))?
+                        Product::paginate(15):
+                        Product::where('category_id', $category_id)->paginate(5);
+            $categories = Category::all();
+            return view ('e-commerce.products', compact('products', 'categories'));
     }
 
     //Funcion para mostrar /product_details
@@ -36,5 +38,15 @@ class SiteController extends Controller
     {
         $carts = Cart::all();
         return view ('e-commerce.cart', compact('carts'));
+    }
+
+    public function productBycategory(){
+        //$cat = Category::find(1);
+        //$products = $cat->products;
+        //$products = Category::find(1)->products;
+        //dd($products);
+        //die();
+        $categories = Category::all();
+        return view('e-commerce.products_by_category',compact('categories'));
     }
 }
