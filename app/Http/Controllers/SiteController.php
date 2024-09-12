@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
 use App\Models\Category;
+use App\Models\Checkout;
+use App\Models\MyAccount;
 
 class SiteController extends Controller
 {
@@ -38,6 +40,19 @@ class SiteController extends Controller
     {
         $carts = Cart::all();
         return view ('e-commerce.cart', compact('carts'));
+    }
+
+    //Funcion para mostrar /myaccount
+    public function myaccount()
+    {
+        $myaccounts = MyAccount::all();
+        return view ('e-commerce.myaccount', compact('myaccounts'));
+    }
+    //Funcion para mostrar /checkout
+    public function checkout()
+    {
+        $checkouts = Checkout::all();
+        return view ('e-commerce.checkout', compact('checkouts'));
     }
 
     public function productBycategory(){

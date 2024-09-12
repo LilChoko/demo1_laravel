@@ -58,14 +58,15 @@
                             <a href="{{route('products')}}" class="nav-item nav-link">Products</a>
                             <a href="{{route('product_details', 0)}}" class="nav-item nav-link">Product Detail</a>
                             <a href="{{route('cart')}}" class="nav-item nav-link">Cart</a>
-                            <a href="/checkout" class="nav-item nav-link">Checkout</a>
-                            <a href="/myaccount" class="nav-item nav-link">My Account</a>
+                            <a href="{{route('checkout')}}" class="nav-item nav-link">Checkout</a>
+                            <a href="{{route('myaccount')}}" class="nav-item nav-link">My Account</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More Pages</a>
                                 <div class="dropdown-menu">
                                     <a href="wishlist.html" class="dropdown-item">Wishlist</a>
                                     <a href="login.html" class="dropdown-item">Login & Register</a>
-                                    <a href="contact.html" class="dropdown-item">Contact Us</a>
+                                    <!-- Direccion hacia Contact Us -->
+                                    <a href="{{ route('contact.index') }}" class="dropdown-item">Contact Us</a>
                                 </div>
                             </div>
                         </div>
