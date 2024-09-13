@@ -50,7 +50,7 @@
                                     </div>
                                     <div class="price">
                                         <h4>Price:</h4>
-                                        <p> <span>{{ $product->price }}</span></p>
+                                        <p>${{ $product->sale_price }} <span>{{ $product->original_price }}</span></p>
                                     </div>
                                     <div class="quantity">
                                         <h4>Quantity:</h4>
@@ -107,67 +107,79 @@
                                         Aqui ira la descripcion del producto.
                                     </p>
                                 </div>
+
                                 <!-- Modificar con una migracion -->
                                 <!-- Aqui se hacen especificaiones del producto -->
                                 <div id="specification" class="container tab-pane fade">
                                     <h4>Product specification</h4>
                                     <ul>
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Lorem ipsum dolor sit amet</li>
+                                        @if ($product->specifications)
+                                            @foreach (json_decode($product->specifications, true) as $specification)
+                                                <li>{{ $specification }}</li>
+                                            @endforeach
+                                        @else
+                                            <li>No hay especificaciones disponibles</li>
+                                        @endif
                                     </ul>
                                 </div>
 
+                                <!-- Comienza la parte de reseña -->
                                 <div id="reviews" class="container tab-pane fade">
 
-                                    <!-- Modificar con una migracion -->
                                     <!-- Aqui se muestra la reseña -->
+                                    <h4>Reseñas del producto</h4>
                                     <div class="reviews-submitted">
-                                        <div class="reviewer">Phasellus Gravida - <span>01 Jan 2020</span></div>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <p>
-                                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-                                        </p>
+                                        @foreach ($product->reviews as $review)
+                                            <div class="reviewer">{{ $review->name }} -
+                                                <span>{{ $review->created_at->format('d M Y') }}</span>
+                                            </div>
+                                            <div class="ratting">
+                                                @for ($i = 0; $i < $review->rating; $i++)
+                                                    <i class="fa fa-star"></i>
+                                                @endfor
+                                                @for ($i = $review->rating; $i < 5; $i++)
+                                                    <i class="far fa-star"></i>
+                                                @endfor
+                                            </div>
+                                            <p>{{ $review->review }}</p>
+                                        @endforeach
                                     </div>
 
-                                    <!-- Modificar con Migracion -->
                                     <!-- Aqui se hace la reseña -->
                                     <div class="reviews-submit">
-                                        <h4>Give your Review:</h4>
-                                        <div class="ratting">
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </div>
+                                        <h4>Deja tu reseña:</h4>
+                                        <form action="{{ route('reviews.store', $product->id) }}" method="POST">
+                                            @csrf
+                                            <div class="ratting">
+                                                <label>Calificación:</label>
+                                                <select name="rating" required>
+                                                    <option value="1">1 Estrella</option>
+                                                    <option value="2">2 Estrellas</option>
+                                                    <option value="3">3 Estrellas</option>
+                                                    <option value="4">4 Estrellas</option>
+                                                    <option value="5">5 Estrellas</option>
+                                                </select>
+                                            </div>
 
-                                        <div class="row form">
-                                            <div class="col-sm-6">
-                                                <input type="text" placeholder="Name">
+                                            <div class="row form">
+                                                <div class="col-sm-6">
+                                                    <input type="text" name="name" placeholder="Nombre" required>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <input type="email" name="email" placeholder="Email" required>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <textarea name="review" placeholder="Escribe tu reseña" required></textarea>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <button type="submit">Enviar reseña</button>
+                                                </div>
                                             </div>
-                                            <div class="col-sm-6">
-                                                <input type="email" placeholder="Email">
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <textarea placeholder="Review"></textarea>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <button>Submit</button>
-                                            </div>
-                                        </div>
-
+                                        </form>
                                     </div>
-                                    <!-- Hasta aqui -->
+
                                 </div>
+                                <!--Hasta aqui termina-->
                             </div>
                         </div>
                     </div>
