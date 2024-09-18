@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminProductsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReviewController;
@@ -23,6 +24,8 @@ Route::resource('/contact', ContactController::class);
 //Ruta hpara almacenar reseñas
 Route::post('products/{product}/reviews',
 [ReviewController::class, 'store'])->name('reviews.store');
+
+Route::get('/admin/products',[AdminProductsController::class, 'index'])->name('admin.products');
 
 
 

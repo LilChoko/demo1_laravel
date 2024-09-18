@@ -19,6 +19,8 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         <link href="{{ asset('lib/slick/slick.css') }}" rel="stylesheet">
         <link href="{{ asset('lib/slick/slick-theme.css') }}" rel="stylesheet">
+        <link rel="stylesheet" ref="https://cdn.datatables.net/2.1.6/css/dataTables.dataTables.css">
+
 
         <!-- Template Stylesheet -->
         <link href="{{ asset('css/style.css')}}" rel="stylesheet">
@@ -218,8 +220,10 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <script src="{{ asset ('lib/easing/easing.min.js')}}"></script>
         <script src="{{ asset ('lib/slick/slick.min.js')}}"></script>
+        <script src="https://cdn.datatables.net/2.1.6/js/dataTables.min.js"></script>
 
         <!-- Template Javascript -->
         <script src="{{ asset ('js/main.js')}}"></script>
+        <script src="{{ asset ('js/e-commerce.js')}}"></script>
     </body>
 </html>
