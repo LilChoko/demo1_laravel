@@ -20,6 +20,7 @@
         <link href="{{ asset('lib/slick/slick.css') }}" rel="stylesheet">
         <link href="{{ asset('lib/slick/slick-theme.css') }}" rel="stylesheet">
         <link rel="stylesheet" ref="https://cdn.datatables.net/2.1.6/css/dataTables.dataTables.css">
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 
         <!-- Template Stylesheet -->
@@ -221,6 +222,7 @@
         <script src="{{ asset ('lib/easing/easing.min.js')}}"></script>
         <script src="{{ asset ('lib/slick/slick.min.js')}}"></script>
         <script src="https://cdn.datatables.net/2.1.6/js/dataTables.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
         <!-- Template Javascript -->
         <script src="{{ asset ('js/main.js')}}"></script>
